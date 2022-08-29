@@ -17,7 +17,7 @@ my_email = ""
 alza_url = "https://www.alza.cz/sport/big-boy-arasidovy-krem-gastro-1-kg-d5814312.htm"
 
 # Vyplň URL produktu s lepší cenou / Fill out competition better price product URL
-competition_link = "https://www.fitness007.cz/big-boy-arasidovy-krem-1000-g-jemny/"
+competition_url = "https://www.fitness007.cz/big-boy-arasidovy-krem-1000-g-jemny/"
 
 # Umíš python? Jestli ne, změň na 'i_can_code = False' - v případě problému se vypíšou čitelné instrukce / poznámky v češtině.
 # Do you know python? If not, change to 'i_can_code = False' - script will generate readable instruction / notes in case of errors.
@@ -26,7 +26,7 @@ i_can_code = True
 
 # %%
 "FUNCTIONS"
-def send_competition_request(my_email, alza_url, competition_link, i_can_code = True):
+def send_competition_request(my_email, alza_url, competition_url, i_can_code = True):
     """
     EN: prepares and sends request for price check to alza.cz eshop even for unsupported competitor eshops
     CZ: připraví a pošle požadavek na kontrolu ceny do eshopu alza.cz, a to i pro nepodporované konkurenční eshopy
@@ -37,8 +37,8 @@ def send_competition_request(my_email, alza_url, competition_link, i_can_code = 
     if alza_url == "":
         raise Exception("Vyplň 'alza_url' / Fill out 'alza_url'")
         
-    if competition_link == "":
-        raise Exception("Vyplň 'competition_link' / Fill out 'competition_link'")
+    if competition_url == "":
+        raise Exception("Vyplň 'competition_url' / Fill out 'competition_url'")
 
         
     timeout = 30
@@ -53,7 +53,7 @@ def send_competition_request(my_email, alza_url, competition_link, i_can_code = 
 
     price_guarantee_url = f"https://www.alza.cz/api/catalog/v1/products/{str(alza_product_id)}/priceGuarantee/lowerPrice"
     
-    d = urlparse(competition_link).netloc
+    d = urlparse(competition_url).netloc
     if d == "":
         domain_error = "Domain cannot be parsed" if i_can_code else "Doménu nelze extrahovat z 'alza_url'. Zkontroluj, jestli je 'alza_url' správně. \
                                                                    / Domain can't be extracted from 'alza_url'. Check if 'alza_url' is correct."
@@ -62,7 +62,7 @@ def send_competition_request(my_email, alza_url, competition_link, i_can_code = 
     
     data = {
         "competitionEshop":[competition_domain],
-        "competitionLink":competition_link,
+        "competitionLink":competition_url,
         "userEmail":my_email,
         "country":"CZ",
         "pgrik":"mAAI"
@@ -103,4 +103,4 @@ def send_competition_request(my_email, alza_url, competition_link, i_can_code = 
     print(o_json["title"])
 
 
-send_competition_request(my_email, alza_url, competition_link, i_can_code)
+send_competition_request(my_email, alza_url, competition_url, i_can_code)
