@@ -19,7 +19,7 @@ Populate these four variables and run the script. / Vyplň tyto čtyři proměnn
 ```
 my_email = "my@email.cz"
 alza_url = "https://www.alza.cz/sport/big-boy-arasidovy-krem-gastro-1-kg-d5814312.htm"
-competition_link = "https://www.fitness007.cz/big-boy-arasidovy-krem-1000-g-jemny/"
+competition_url = "https://www.fitness007.cz/big-boy-arasidovy-krem-1000-g-jemny/"
 i_can_code = True
 ```
 
