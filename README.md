@@ -25,11 +25,18 @@ i_can_code = True
 
 -----------
 
-> __Warning__
+> __Note__
 SET UP TO WORK ONLY FOR ALZA.CZ / NASTAVENO JEN PRO ALZA.CZ
 
-> __Warning__
 For other countries `price_guarantee_url` would have to be updated, as well as `data['country']` and possibly `data['pgrik']`.
 
-> __Warning__
 Pro ostatní země bude potřeba upravit `price_guarantee_url`, `data['country']` a možná i `data['pgrik']`.
+
+-----------
+
+> __Warning__
+> DISCLAIMER:
+
+This was created for illustration purposes only. Not intended to actually get a lower price.
+
+Vytvořeno jen pro ilustrační účely. Není určeno ke skutečnému získání nižší ceny.
