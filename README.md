@@ -17,8 +17,19 @@ Při použití Garance nejlepší ceny je cena garantována jen pro produkty pro
 Populate these four variables and run the script. / Vyplň tyto čtyři proměnné a spusť script.
 
 ```
-my_email = ""
+my_email = "my@email.cz"
 alza_url = "https://www.alza.cz/sport/big-boy-arasidovy-krem-gastro-1-kg-d5814312.htm"
 competition_link = "https://www.fitness007.cz/big-boy-arasidovy-krem-1000-g-jemny/"
 i_can_code = True
 ```
+
+-----------
+
+> __Warning__
+SET UP TO WORK ONLY FOR ALZA.CZ / NASTAVENO JEN PRO ALZA.CZ
+
+> __Warning__
+For other countries `price_guarantee_url` would have to be updated, as well as `data['country']` and possibly `data['pgrik']`.
+
+> __Warning__
+Pro ostatní země bude potřeba upravit `price_guarantee_url`, `data['country']` a možná i `data['pgrik']`.
